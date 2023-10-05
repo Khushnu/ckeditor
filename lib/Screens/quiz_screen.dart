@@ -46,12 +46,14 @@ class _TeXViewQuizExampleState extends State<QuizScreen> {
       body: SafeArea(
         child: ListView(
           // physics: const ScrollPhysics(),
+
           children: <Widget>[
             widgetdata = Column(
               children: [
                 for (int a = 0; a < quizList.length; a++)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
+                    //latex radenred using texview not in normal widget
                     child: TeXView(
                       loadingWidgetBuilder: (context) {
                         return Padding(
@@ -124,6 +126,9 @@ class _TeXViewQuizExampleState extends State<QuizScreen> {
       ),
     );
   }
+
+
+  //Save file as padf function
 
   Future<void> saveAsPdf() async {
     final pdf = pw.Document();
